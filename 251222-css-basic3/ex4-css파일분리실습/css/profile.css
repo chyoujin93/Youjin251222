@@ -1,5 +1,7 @@
-/* css 파일 내부에서는 
-<style> 태그를 사용하지 않습니다. !!!! */
+/* 주의사항! css 파일 내부에서는 
+    <style> 태그를 사용하지 않습니다. !!!! */
+
+
 body {
     background-color: lightyellow;
 }
