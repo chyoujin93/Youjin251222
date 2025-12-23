@@ -8,17 +8,20 @@
     <style>
         /* 실습9 */
         .btn {
-            width: 200px;
-            height: 100px;
-            pad: 10px 20px;
-            background-color: green;
-            color: white;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: transform 0.3s;
+            width: 200px; /*임의설정*/
+            height: 100px; /*임의설정*/
+            pad: 10px 20px; /*임의설정*/
+            background-color: rgb(54, 202, 54); /*임의설정*/
+            color: white; /*임의설정*/
+            cursor: pointer; /*임의설정*/
+            display: flex; /*임의설정*/
+            justify-content: center; /*임의설정*/
+            align-items: center; /*임의설정*/
+            transition: transform 0.5s; /* 변화가 부드럽게 일어나도록 설정 */
         }
+        
+        /* 버튼 올렸을 때(:hover) 
+            크기가 1.2배 커지게, scale 사용 */
         .btn:hover {
             transform: scale(1.2);
         }
@@ -34,8 +37,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: all 0.3s;
-            
+            transition: all 0.4s;
         }
 
         .icon:hover {

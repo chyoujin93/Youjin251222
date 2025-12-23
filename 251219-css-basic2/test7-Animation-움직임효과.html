@@ -24,7 +24,7 @@
         .box {
             animation-name: my-slide;
             /* 시나리오 이름 */
-            animation-duration: 2s;
+            animation-duration: 5s;
             /* 재생 시간 */
             animation-iteration-count: infinite;
         }
@@ -32,7 +32,7 @@
         /* 애니메이션 효과 주기 2 */
          /* 1. 키프레임 정의: 이름은 'move-color' */
         @keyframes move-color {
-            0%   { left: 0px; background-color: red; }
+            0%   { left: 0px; background-color: red(17, 11, 31); }
             50%  { left: 200px; background-color: yellow; } /* 중간 지점 */
             100% { left: 0px; background-color: red; }
         }
@@ -42,7 +42,6 @@
             width: 100px;
             height: 100px;
             background-color: red;
-            
             /* 2. 애니메이션 적용 */
             animation-name: move-color;
             animation-duration: 3s;        /* 3초 동안 재생 */

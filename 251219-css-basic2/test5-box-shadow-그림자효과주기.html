@@ -10,26 +10,23 @@
             width: 200px;
             height: 100px;
             background: white;
-            /* 가로0, 세로4px 이동, 10px만큼 흐리게, 투명도 0.1 검정 */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            /* 가로10, 세로10px 이동, 10px만큼 흐리게, 투명도 0.7 검정 */
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
         }
-
         .fab-button {
             width: 50px;
             height: 50px;
-            /* 이효과를 주면, 동그란 모양이 됩니다. 가끔 프로필 모양으로도 사용함. */
+            /* 이효과를 주면, 동그란 모양이 됩니다. 
+            가끔 프로필 모양으로도 사용함. */
             border-radius: 50%;
             /* 세로로 10px 내리고 20px만큼 크게 퍼트림 */
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-
             /* Top 글자를 정중앙 효과, flex 이용하기.  */
             display: flex;
             justify-content: center;
             align-items: center;
-
             background-color: aqua;
         }
-
         .input-field {
             width: 200px;
             padding: 10px;
@@ -38,7 +35,6 @@
         }
     </style>
 </head>
-
 <body>
     <h2>box-shadow 효과 주기 1</h2>
     <div class="card">
@@ -50,7 +46,6 @@
     <div class="fab-button">
         Top
     </div>
-
 
     <h2>box-shadow 효과 주기 3 </h2>
     <p>안쪽 그림자 (입력창/눌린 버튼) 효과 </p>
