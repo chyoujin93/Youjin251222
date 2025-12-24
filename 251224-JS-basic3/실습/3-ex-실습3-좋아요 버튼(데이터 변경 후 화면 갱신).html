@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습3</title>
+</head>
+<div id="postBox">
+</div>
+<button id="likeBtn">좋아요❤️</button>
+<body>
+<script>
+let post = {
+    title: "오늘의 일기",
+    likes: 0
+    };
+
+const postBox = document.getElementById('postBox');
+const likeBtn = document.getElementById('likeBtn');
+
+function render() {
+    postBox.innerHTML = `<h3>${post.title}</h3>
+                         <p>좋아요 : ${post.likes}개</p>`;
+}
+
+render();
+    likeBtn.addEventListener('click', function() {
+    post.likes++; //버튼 클릭 할 때마다, 카운트 증가.. 단순증가로 구성
+    render(); //데이터 변경이 발생해서 화면을 갱신해야함. 
+});
+
+</script>
+
+
+</body>
+</html>
