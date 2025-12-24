@@ -40,7 +40,6 @@ if(todo === "") {
         //방법2-3-2. 버튼 클릭시, 부모 li를 삭제
         this.parentElement.remove();
     })
-    
     //방법2-4. 위의 기능들을 조립하기.
     //li 태그의 자식으로 버튼을 넣기.
     //<li> <button> </button></li>
