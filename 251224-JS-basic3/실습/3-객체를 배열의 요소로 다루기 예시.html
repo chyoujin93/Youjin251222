@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상품 목록</title>
+
+<style>
+    .product-card {
+        border: 1px solid #ddd;
+        margin: 10px;
+        padding: 10px;
+        }
+</style>
+</head>
+
+<body>
+<h2>추천 상품</h2>
+<div id="product-container">
+</div>
+
+<script>
+// 1. 상품 데이터 정의
+const items = [
+    {
+    name: "맥북 프로",
+    price: 3000000,
+    color: "실버"
+    },
+    { name: "아이패드", price: 1000000, color: "그레이" },
+    { name: "에어팟", price: 300000, color: "화이트" }
+    ];
+
+// 2. 상품을 표시할 컨테이너 요소 가져오기
+const productContainer = document.getElementById('product-container');
+
+// 3. items 배열을 순회하며 HTML 요소 생성 및 추가
+items.forEach(item => {
+// ES6 템플릿 리터럴을 사용하여 HTML 문자열 생성
+const productHtml = `
+    <div class="product-card">
+    <h3>상품명: ${item.name}</h3>
+    <p>가격: ${item.price.toLocaleString()}원</p>
+    <p>색상: ${item.color}</p>
+    </div>
+        `;
+        
+    // 생성된 HTML 문자열을 컨테이너에 삽입
+    productContainer.insertAdjacentHTML('beforeend', productHtml);
+    });
+</script>
+
+</body>
+</html>
