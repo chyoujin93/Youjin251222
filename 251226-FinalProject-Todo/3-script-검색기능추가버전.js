@@ -1,10 +1,9 @@
 //1 필요한 요소 선택. 
 const input = document.getElementById('taskInput');
+// btn -> addBtn , 변경
 const addBtn = document.getElementById('addBtn');
+// list -> listContainer, 변경
 const listContainer = document.getElementById('taskList');
-
-const searchBox = document.getElementById('searchBox')
-const searchBtn = document.getElementById('searchBtn')
 
 // 추가 순서10, 
 let todoData = JSON.parse(localStorage.getItem('myTodos')) || [];
@@ -26,84 +25,25 @@ function render(dataArray) {
   // 기존 내용을 다 지우고,
   listContainer.innerHTML = "";
 
-  // 데이터가 없을 때 안내 메시지 (선택사항)
-
-  // 방법1, 
-  // 일반 css 인라인 작업. 
-    // if (dataArray.length === 0) {
-    //     listContainer.innerHTML = '<div style="padding:10px; color:#888;">표시할 내용이 없습니다.</div>';
-    //     return;
-    // }
-
-    // 방법2 
-    // tailwind css 작업. 
-    // 데이터가 없을 때 안내 메시지
-    if (dataArray.length === 0) {
-        listContainer.innerHTML = `
-            <div class="text-center text-gray-400 py-10">
-                할 일이 없습니다. 작성해보세요! 📝
-            </div>`;
-        return;
-    }
-
   //  새로 요소를 그릴 예정. 새로고침 효과.
   // 기반이 데이터를 중심으로 한다. 그 데이터는 배열에 들어있다. 
   //  배열과, 반복문을 같이 사용하는 함수 소개. forEach(function(){}), 이 기법사용.
-  //
-  // 방법1 , 일반 css 인라인 구성
-//   dataArray.forEach( function(todo) {
-// 	 listContainer.innerHTML += `
-//     <li>
-// 	  <span>${todo.text}</span>
-// 	  <div>
-// 		<button class="edit-btn" onclick="updateTodo(${todo.id})">
-// 		  수정
-// 		</button>
-// 		<button class="del-btn" onclick="deleteTodo(${todo.id})">
-// 		  삭제
-// 		</button>
-// 	  </div>
-// 	</li>
-//   `
-
-//   } // forEach닫는 태그 
-//   )  //render 닫는 태그 
-// 방법2 
-// tailwind 버전, 코드는 그대로, css 만 변경이 됨. 
-dataArray.forEach(function(todo) {
-    //순서19 
-// 1 조건부 렌더링 추가.
-//todo.done ? 참일때 실행될 문장 : 거짓일때 실행될 문장
-const textStyle = todo.done ? "line-through text-gray-400" : "text-gray-700"
-
-// 2 체크박스의 상태 결정
-const checked = todo.done ? "checked" : "";
-// 3 체크박스 input 태그 추가 
-
-// 4   <span class="${textStyle}">${todo.text}</span>
-        listContainer.innerHTML += `
-            <li class="flex justify-between items-center p-4 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition">
-            
-            <input type="checkbox" ${checked} 
-				onclick="toggleTodo(${todo.id})"
-				class="w-5 h-5 cursor-pointer accent-blue-500"
-				>
-
-                <span class="${textStyle}">${todo.text}</span>
-                
-                <div class="flex gap-2">
-                    <button onclick="updateTodo(${todo.id})" 
-                        class="text-sm bg-green-100 text-green-600 px-3 py-1.5 rounded-md hover:bg-green-200 transition font-bold">
-                        수정
-                    </button>
-                    <button onclick="deleteTodo(${todo.id})" 
-                        class="text-sm bg-red-100 text-red-600 px-3 py-1.5 rounded-md hover:bg-red-200 transition font-bold">
-                        삭제
-                    </button>
-                </div>
-            </li>
-        `;
-    });
+  todoData.forEach( function(todo) {
+	 listContainer.innerHTML += `
+    <li>
+	  <span>${todo.text}</span>
+	  <div>
+		<button class="edit-btn" onclick="updateTodo(${todo.id})">
+		  수정
+		</button>
+		<button class="del-btn" onclick="deleteTodo(${todo.id})">
+		  삭제
+		</button>
+	  </div>
+	</li>
+  `
+  } // forEach닫는 태그 
+  )  //render 닫는 태그 
  
 } //render 닫는 태그 
 
@@ -122,9 +62,7 @@ function addTodo() {
     const newTodo = {
         // id , 각 todo마다 고유값을 날짜 형식으로 지정. 
         id: Date.now(),
-        text: input.value,
-        //순서18 
-		done: false // 핵심. 상태변수 매우 많이 사용됨. 
+        text: input.value
     }
 
     // 새로운 할일, 배열에 추가 
@@ -157,10 +95,8 @@ function deleteTodo(id) {
         // 예시) 인덱스   0       1       2
         // 가정)  id     0        1      2
         // todoData = ["사과","바나나", "딸기"]
-
         // filter 함수는 해당 로직의 참을 만족하는 요소만 남기고, 나머지는 제외합니다. 
         // filter는 배열 안의 모든 요소를 순회한다. 모든 요소를 검사함. 
-
         // item : todoData 배열의 요소를 하나씩 꺼내서 담기. 
         // 삭제할 요소의 인덱스 : 1(바나나, id : 1)
         // 반복1
@@ -236,7 +172,6 @@ function updateTodo(id) {
   // 예시)       인덱스   0       1       2
         // 가정)  id     0        1      2
         // todoData = ["사과","바나나", "딸기"]
-        
         // find: 수정할 id 가, 현재 배열에서 찾아서, 찾은 요소를 가져오는 기능. 
         
         // item : todoData 배열의 요소를 하나씩 꺼내서 담기. 
@@ -269,7 +204,8 @@ function updateTodo(id) {
 }
 
 // 순서15
-
+const searchBox = document.getElementById('searchBox')
+const searchBtn = document.getElementById('searchBtn')
 
 // 이벤트 리스너(경비원) 추가 , 무엇을 감지? 키보드를 입력 후 
 // 키를 누른 상태를 down, 키를 떼는 순간을 up. 이벤트 감지 
@@ -289,19 +225,4 @@ searchBtn.addEventListener('click', function(){
 })
 
 
-// 순서20
-// 체크 박스를 누를 때마다, true, false 뒤집어주는 함수 생성. 
 
-// 완료 상태 토글하는 기능. 
-
-function toggleTodo(id) {
-  // 1. 해당 id로 변경할 todo 찾기. 
-  const item = todoData.find(todo => todo.id === id);
-  // 2. done 의 조건을 변경. 
-  if(item) { // 체크해제 할 대상 todo가 있다면, 
-    item.done = !item.done; // true -> false , false -> true 효과
-	save(); 
-	render(todoData);
-  }
-  
-}
