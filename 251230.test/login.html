@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>로그인</h2>
+        <form id="login-form">
+            <div>
+                <label for="login-email">이메일</label>
+                <input type="email" id="login-email" required placeholder="example@gmail.com">
+                <small>본인의 메일주소를 입력하세요.</small>
+            </div>
+            
+            <div>
+                <label for="login-password">비밀번호</label>
+                <input type="password" id="login-password" required minlength="8" placeholder="********">
+                <small>영문, 숫자 조합 8자 이상</small>
+            </div>
+            
+            <button type="submit" class="btn primary-btn">Log in</button>
+            
+            <button type="button" class="btn secondary-btn" onclick="location.href='signup.html'">Sign up</button>
+        </form>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

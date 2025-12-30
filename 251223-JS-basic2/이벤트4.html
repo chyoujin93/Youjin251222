@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="signupBtn">회원가입</button>
+    <button id="loginBtn">로그인</button>
+    <button id="darkBtn">다크모드</button>
+    <button id="basicBtn">기본모드</button>
+
+    <script>
+// 1. 회원가입 버튼 클릭
+signupBtn.addEventListener('click', function () {
+    alert('회원가입 버튼 클릭');
+});
+
+// 2. 로그인 버튼 클릭
+loginBtn.addEventListener('click', function () {
+    alert('로그인 시도');
+});
+
+// 3. 다크 모드 버튼
+darkBtn.addEventListener('click', function () {
+    document.body.style.backgroundColor = 'black';
+});
+
+// 4. 기본 모드 버튼
+basicBtn.addEventListener('click', function () {
+    document.body.style.backgroundColor = 'white';
+    document.body.style.color = 'black';
+});
+    </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트1</title>
+</head>
+
+<body>
+    <h3 id="title">버튼을 누르면<br>
+        색상이 변합니다.</h3>
+    <button id="changeBtn">클릭하기</button>
+
+    <script>
+        const myTitle = document.getElementById('title');
+        const myBtn = document.getElementById('changeBtn');
+
+        myBtn.addEventListener('click', function () {
+            myTitle.style.color = 'blue';
+            myTitle.style.backgroundColor = 'yellow';
+            myBtn.style.backgroundColor = 'pink';
+           myBtn.style.fontSize = "30px";
+           myBtn.innerText = "클릭완료";
+           myBtn.style.fontWeight = "bold";
+            alert('색상이 변경되었습니다!'); 
+        });
+    </script>
+</body>
+
+</html>

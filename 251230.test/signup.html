@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>회원가입</h2>
+        <form id="signup-form">
+            <div>
+                <label for="signup-email">이메일</label>
+                <input type="email" id="signup-email" required placeholder="example@gmail.com">
+                <small>본인의 메일주소를 입력하세요.</small>
+            </div>
+            
+            <div>
+                <label for="signup-password">비밀번호</label>
+                <input type="password" id="signup-password" required minlength="8" placeholder="********">
+                <small>영문, 숫자 조합 8자 이상</small>
+            </div>
+            
+            <div>
+                <label for="signup-confirm-password">비밀번호 확인</label>
+                <input type="password" id="signup-confirm-password" required onblur="checkPasswordMatch()" placeholder="********">
+                <p id="password-match-error" class="error-message"></p>
+            </div>
+            
+            <div>
+                <input type="checkbox" id="terms" required>
+                <label for="terms">이용 약관 및 개인정보 처리 방침에 동의합니다.</label>
+            </div>
+
+            <button type="submit" class="btn primary-btn">Signup & Login</button>
+        </form>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

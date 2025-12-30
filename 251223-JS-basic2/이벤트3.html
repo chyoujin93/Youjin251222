@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트3</title>
+</head>
+<body>
+    <button id="basicBtn">기본 모드</button>
+    <button id="warmBtn">따뜻한 모드</button>
+    <button id="darkBtn">다크 모드</button>
+
+    <h1 id="text">이벤트3</h1>
+
+    <script>
+        const basicBtn = document.getElementById('basicBtn');
+        const warmBtn = document.getElementById('warmBtn');
+        const darkBtn = document.getElementById('darkBtn');
+
+        // 기본 모드
+        basicBtn.addEventListener('click', function () {
+            document.body.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
+        });
+
+        // 따뜻한 모드
+        warmBtn.addEventListener('click', function () {
+            document.body.style.backgroundColor = '#fff3e0';
+            document.body.style.color = '#5d4037';
+        });
+
+        // 다크 모드
+        darkBtn.addEventListener('click', function () {
+            document.body.style.backgroundColor = '#121212';
+            document.body.style.color = 'white';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트2</title>
+</head>
+<body>
+
+    <h3 id="title">안녕하세요.</h3>
+
+    <input type="text" id="userInput" placeholder="이름을 입력하세요">
+    <button id="changeBtn">확인</button>
+
+    <script>
+        const myTitle = document.getElementById('title');
+        const myInput = document.getElementById('userInput');
+        const myBtn = document.getElementById('changeBtn');
+
+        myBtn.addEventListener('click', function () {
+            const inputValue = myInput.value;
+            if (inputValue !== "") {
+                myTitle.innerText = inputValue + "님, 반갑습니다^^";
+            } else {
+                alert("이름을 입력해주세요.");
+            }
+        });
+    </script>
+
+</body>
+</html>
